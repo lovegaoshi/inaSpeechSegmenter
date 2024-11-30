@@ -47,7 +47,7 @@ speech-activity-detection
 VAD
 praat'''.strip().split('\n')
 
-CLASSIFIERS=[
+CLASSIFIERS = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Developers',
     'Intended Audience :: Education',
@@ -59,7 +59,7 @@ CLASSIFIERS=[
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
-    'Programming Language :: Python :: 3.10', 
+    'Programming Language :: Python :: 3.10',
     'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
     'Topic :: Multimedia :: Sound/Audio',
@@ -73,8 +73,8 @@ CLASSIFIERS=[
     'Topic :: Sociology',
 ]
 
-DESCRIPTION='CNN-based audio segmentation toolkit. Does voice activity detection, speech detection, music detection, noise detection, speaker gender recognition.'
-LONGDESCRIPTION='''Split audio signal into homogeneous zones of speech, music and noise. Then detects speaker gender.  
+DESCRIPTION = 'CNN-based audio segmentation toolkit. Does voice activity detection, speech detection, music detection, noise detection, speaker gender recognition.'
+LONGDESCRIPTION = '''Split audio signal into homogeneous zones of speech, music and noise. Then detects speaker gender.  
 
 inaSpeechSegmenter has been presented at the IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP) 2018 conference in Calgary, Canada. If you use this toolbox in your research, you can cite the following work in your publications :
 
@@ -105,22 +105,23 @@ Details on the speech detection submodule can be found bellow:
 '''
 
 setup(
-    name = "inaSpeechSegmenter",
-    version = versioneer.get_version(),
-    cmdclass = versioneer.get_cmdclass(),
-    author = "David Doukhan",
-    author_email = "david.doukhan@gmail.com",
+    name="inaSpeechSegmenter",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
+    author="David Doukhan",
+    author_email="david.doukhan@gmail.com",
     test_suite="run_test.py",
-    description = DESCRIPTION,
-    license = "MIT",
-    install_requires=['tensorflow[and-cuda]', 'numpy', 'pandas', 'scikit-image', 'pyannote.core', 'matplotlib', 'Pyro4', 'pytextgrid', 'soundfile', 'onnxruntime'], #'torch'
- #   keywords = "example documentation tutorial",
-    url = "https://github.com/ina-foss/inaSpeechSegmenter",
-#    packages=['inaSpeechSegmenter'],
-    keywords = KEYWORDS,
-    packages = find_packages(),
-    include_package_data = True,
-    data_files = ['LICENSE'],
+    description=DESCRIPTION,
+    license="MIT",
+    install_requires=['pyannote.core', 'matplotlib', 'Pyro4',
+                      'pytextgrid', 'soundfile', 'onnxruntime'],  # 'torch'
+    #   keywords = "example documentation tutorial",
+    url="https://github.com/ina-foss/inaSpeechSegmenter",
+    #    packages=['inaSpeechSegmenter'],
+    keywords=KEYWORDS,
+    packages=find_packages(),
+    include_package_data=True,
+    data_files=['LICENSE'],
     long_description=LONGDESCRIPTION,
     long_description_content_type='text/markdown',
     scripts=[os.path.join('scripts', script) for script in \
